@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enhanced floating fruits with theme adaptation */
+[data-theme='dark'] .floating-fruit {
+  transition: filter 0.5s ease;
+  filter: brightness(0.9) drop-shadow(0 0 8px rgba(0,255,200,0.15));
+}
+
+[data-theme='light'] .floating-fruit {
+  transition: filter 0.5s ease;
+  filter: brightness(1.05);
+}
+
+/* Theme-reactive gradient backgrounds */
+.theme-gradient-dark {
+  background: radial-gradient(circle at center, rgba(15,25,40,0.4), transparent 80%);
+}
+
+.theme-gradient-light {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 85%);
+}
+
+/* Smooth theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Enhanced glow effects for dark mode */
+.dark .fruit-glow {
+  filter: drop-shadow(0 0 4px rgba(0, 255, 160, 0.4));
+}
+
+/* Particle glow effects */
+.dark .particle-glow {
+  filter: drop-shadow(0 0 4px rgba(0,255,160,0.3));
+}
+
+/* Smooth entry animations */
+.fruit-entry {
+  animation: fruitFloatIn 0.8s ease-out forwards;
+}
+
+@keyframes fruitFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* GPU-optimized transforms */
+.gpu-optimized {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 160, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 160, 0.5);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 160, 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 160, 0.6);
+}
+
+/* Floating navbar enhancements */
+.floating-navbar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.floating-navbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,255,200,0.1), rgba(255,255,255,0.05), rgba(0,255,160,0.1));
+  opacity: 0.2;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  border-radius: inherit;
+}
+
+/* Smooth scroll hide animation */
+.navbar-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-visible {
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced glassmorphism for navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-navbar {
+  background: rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Pulsing glow for Get Started button */
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.1);
+  }
+}
+
+/* Enhanced gradient text for brand */
+.gradient-text {
+  background: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon glow effects for navbar */
+.neon-glow {
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+  transition: filter 0.3s ease;
+}
+
+.neon-glow:hover {
+  filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8));
+}
+
+/* Smart scroll navbar transitions */
+.navbar-scrolled {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-top {
+  background: linear-gradient(90deg, #111827, #1f2937, #111827);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Enhanced button glow */
+.button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button-glow:hover::before {
+  left: 100%;
+}
