@@ -2,6 +2,8 @@
 
 An AI-powered web app that scans food ingredient labels using OCR and AI to provide comprehensive health analysis, risk assessments, and personalized recommendations.
 
+> **🚀 Latest Update**: Enhanced dashboard with real-time analytics and improved user experience!
+
 ## Features
 
 - 📸 Upload or capture images of ingredient labels using camera or file upload
