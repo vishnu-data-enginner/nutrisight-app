@@ -14,7 +14,7 @@ const CleanDashboard: React.FC = () => {
       {/* Header */}
       <div className="text-center">
         <h1 className="text-3xl font-semibold text-slate-800">
-          Welcome back, <span className="text-emerald-600">vishnu9211!</span> 👋
+          Welcome back, <span className="text-emerald-600">User!</span> 👋
         </h1>
         <p className="text-slate-500 mt-1">
           Time to upgrade! Unlock unlimited scans and advanced features.
